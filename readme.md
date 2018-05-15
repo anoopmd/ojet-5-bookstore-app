@@ -6,6 +6,15 @@ sudo npm uninstall -g @oracle/ojet-cli
 ### Installing OJET CLI
 sudo npm install -g @oracle/ojet-cli
 
+### Workflow
+```bash
+# Build
+ojet build
+
+# Serve
+ojet serve
+```
+
 ### Set Proxy
 npm config set proxy http-proxy-server-URL:proxy-port
 npm config set https-proxy https-proxy-server-URL:proxy-port
