@@ -108,10 +108,14 @@ module.exports = function () {
  * It takes a fileList as input, see copyCustomLibsToStaging section for examples of fileList
  * See detailed node sass options available here https://github.com/sass/node-sass
  */
-    // sass: {
-    //   fileList: [],
-    //   options: {}
-    // },
+    sass: {
+      fileList: [{
+        cwd:'/home/anoop/Github/ojet-5-bookstore-app/src/scss',
+        src: ['main.scss'],
+        dest: '/home/anoop/Github/ojet-5-bookstore-app/web/main.css'
+      }],
+      options: {}
+    },
 
 /**
  * This is the web specific configuration. You can specify configurations targeted only for web apps. 
