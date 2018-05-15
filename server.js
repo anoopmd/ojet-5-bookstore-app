@@ -26,7 +26,7 @@ app.use(express.urlencoded({extended: true}));
 app.configure(express.rest());
 
 // Connect to the db, create and register a Feathers service.
-app.use('/api/books', service({
+app.use('/api/book', service({
   Model: db,
   id: 'id',
   paginate: {
