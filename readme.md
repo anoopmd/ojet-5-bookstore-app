@@ -13,6 +13,7 @@ ojet build
 
 # Serve
 ojet serve
+ojet serve --theme=build
 ```
 
 ### Set Proxy
