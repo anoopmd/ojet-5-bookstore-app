@@ -1,11 +1,26 @@
 define(['ojs/ojcore', 'knockout', 'jquery',
   'services/book',
   'services/books',
+  'jet-composites/sweet-alert/loader',
+  'jet-composites/my-alert/loader',
+  'jet-composites/my-alert-attributes/loader',
   'promise', 'ojs/ojlistview', 'ojs/ojcollectiontabledatasource', 'ojs/ojmodel'],
  function(oj, ko, $, Book, Books) {
   
     function BooksViewModel() {
       var self = this;
+
+      self.message = 'An error occured';
+
+      self.onSuccess = function(message) {
+        console.log(message);
+        console.log('Callback called received from component');
+      };
+
+      self.alertClicked = function(viewmodel, event) {
+        console.log(event);
+        console.log('Alert Clicked');
+      }
 
       this.fruits = ['Apple', 'Mango'];
 
