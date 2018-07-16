@@ -14,13 +14,30 @@
 
 @import 'helpers/flex';
 $color-bs-primary: #0984e3;
+$bs-color-text: rgb(33, 43, 53);
+
+body{
+  background-color: rgba(211, 217, 217, 0.15);
+}
 
 header.oj-web-applayout-header{
-  background-color: $color-bs-primary;
-  color: white;
+  background-color: inherit;
+  box-shadow: none;
 
   .oj-web-applayout-header-title{
-    color: white;
+    color: $bs-color-text;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 20px;
+    line-height: inherit;
+  }
+
+  .header-toolbar{
+    a{
+      color: $bs-color-text;
+      font-weight: 500;
+      padding: 5px 10px;
+    }
   }
 
   .oj-navigationlist-item-label, .oj-navigationlist-app-level.oj-navigationlist-horizontal .oj-navigationlist-item:not(.oj-disabled) a.oj-navigationlist-item-content > .oj-navigationlist-item-label{
@@ -49,17 +66,23 @@ header.oj-web-applayout-header{
 }
 
 div.bookstore-book-list{
+  margin-top: 15px;
+
   oj-list-view{
     height: auto !important;
+    border: none;
   }
+
   ul{
     display: flex;
+    justify-content: center;
 
     li.oj-listview-item-element{
       width: 200px;
       margin-right: 15px;
       margin-top: 15px;
-      border: solid 1px silver;
+      border: solid 1px #dcdcdc;
+      background-image: none;
       border-radius: 3px;
       padding: 10px 15px;
       margin-left: 0;
@@ -85,5 +108,22 @@ div.bookstore-book-list{
         font-weight: bold;
       }
     }
+  }
+
+  .bookstore-pager{
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+footer.oj-web-applayout-footer{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-top: none;
+  background-color: inherit;
+  div.oj-web-applayout-footer-item{
+    justify-content: center;
   }
 }

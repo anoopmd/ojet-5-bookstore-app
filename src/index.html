@@ -38,25 +38,16 @@
       <header role="banner" class="oj-web-applayout-header">
         <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
           <div class="oj-flex-bar-middle oj-sm-align-items-baseline">
-            <h1 class="oj-sm-only-hide oj-web-applayout-header-title" title="Application Name"><oj-bind-text value="[[appName]]"></oj-bind-text></h1>
+            <h1 class="oj-web-applayout-header-title">
+              Jerry's Bookstore
+            </h1>
           </div>
-          <div class="oj-flex-bar-end">
-            <!-- Responsive Toolbar -->
-            <oj-toolbar>
-              <oj-menu-button id="userMenu" display="[[smScreen() ? 'icons' : 'all']]" chroming="half">
-                <span><oj-bind-text value="[[userLogin]]"></oj-bind-text></span>
-                <span slot="endIcon" :class="[[{'oj-icon demo-appheader-avatar': smScreen(), 'oj-component-icon oj-button-menu-dropdown-icon': !smScreen()}]]"></span>
-                <oj-menu id="menu1" slot="menu" style="display:none">
-                  <oj-option id="pref" value="pref">Preferences</oj-option>
-                  <oj-option id="help" value="help">Help</oj-option>
-                  <oj-option id="about" value="about">About</oj-option>
-                  <oj-option id="out" value="out">Sign Out</oj-option>
-                </oj-menu>
-              </oj-menu-button>
-            </oj-toolbar>
+          <div class="oj-flex-bar-end header-toolbar">
+            <a href="#">Cart</a>
+            <a href="#">Logout</a>
           </div>
         </div>
-        <div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar">
+        <div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar" style="display: none;">
           <oj-navigation-list data="[[navDataSource]]"
                               :class="[[{'oj-md-condense oj-md-justify-content-flex-end': !smScreen()}]]"
                               display="[[smScreen() ? 'icons' : 'all']]"
@@ -72,7 +63,7 @@
 
       <footer class="oj-web-applayout-footer display-flex align-items-center" role="contentinfo">
         <div class="oj-web-applayout-footer-item oj-web-applayout-max-width oj-text-secondary-color oj-text-sm">
-          Copyright © 2014, 2018 Jerrys Bookstore All rights reserved.
+          Copyright © 2014 -2018, Jerrys Bookstore.
         </div>
       </footer>
     </div>

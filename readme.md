@@ -8,12 +8,18 @@ sudo npm install -g @oracle/ojet-cli
 
 ### Workflow
 ```bash
+# Install
+yarn install
+
 # Build
 ojet build
 
 # Serve
 ojet serve
 ojet serve --theme=build
+
+# Run WebService
+node server.js
 ```
 
 ### Set Proxy

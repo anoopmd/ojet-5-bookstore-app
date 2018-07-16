@@ -16,3 +16,6 @@ Thumbs.db
 
 db-data/*
 !db-data/.gitkeep
+
+npm-debug.log
+yarn-error.log
