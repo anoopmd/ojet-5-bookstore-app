@@ -6,10 +6,21 @@
 /*
  * Your application specific code will go here
  */
-define(['ojs/ojcore', 'knockout', 'ojs/ojmodule-element-utils', 'ojs/ojmodule-element', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarraytabledatasource'],
-  function(oj, ko, moduleUtils) {
-     function ControllerViewModel() {
-       var self = this;
+define(['ojs/ojcore', 'knockout', 'ojs/ojmodule-element-utils', 'helpers/user', 'helpers/signals', 'ojs/ojmodule-element', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojarraytabledatasource'],
+  function(oj, ko, moduleUtils, UserHelper, Signals) {
+    function ControllerViewModel() {
+      var self = this;
+
+      self.userLoggedIn = ko.observable(false);
+
+      let token = UserHelper.getAccessToken();
+      if(token) {
+        self.userLoggedIn(true);
+      }
+
+      Signals.user.loggedIn.add(function(){
+        self.userLoggedIn(true);
+      });
 
       // Media queries for repsonsive layouts
       var smQuery = oj.ResponsiveUtils.getFrameworkQuery(oj.ResponsiveUtils.FRAMEWORK_QUERY_KEY.SM_ONLY);
@@ -18,8 +29,9 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojmodule-element-utils', 'ojs/ojmodule-el
        // Router setup
        self.router = oj.Router.rootInstance;
        self.router.configure({
+         'login': {label: 'Login'},
          'book': {label: 'Book', isDefault: true},
-         'admin': {label: 'Admin'}
+         'cart': {label: 'Cart', canEnter : function() {return true;}}
        });
       oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
 
@@ -43,20 +55,21 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojmodule-element-utils', 'ojs/ojmodule-el
         });
       };
 
-      // Navigation setup
-      var navData = [
-      {name: 'Book', id: 'book',
-       iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-chart-icon-24'},
-      {name: 'Admin', id: 'admin',
-       iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-fire-icon-24'}
-      ];
-      self.navDataSource = new oj.ArrayTableDataSource(navData, {idAttribute: 'id'});
+      self.logout = function(){
+        let token = UserHelper.setAccessToken();
+        self.userLoggedIn(false);
+        self.router.go('login');
+      };
 
-      // Header
-      // Application Name used in Branding Area
-      self.appName = ko.observable("Jerry's Bookstore");
-      // User Info used in Global Navigation area
-      self.userLogin = ko.observable("john.hancock@oracle.com");
+      self.gotoCart = function(){
+        self.router.go('cart');
+      };
+
+      oj.Router.sync().then(function() {
+        console.log("Router Synced");
+      }, function(error) {
+         oj.Logger.error('Error when starting router: ' + error.message);
+      });
      }
 
      return new ControllerViewModel();

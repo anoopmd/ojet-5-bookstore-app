@@ -1,0 +1,52 @@
+div.bookstore-book-list{
+  margin-top: 15px;
+
+  oj-list-view{
+    height: auto !important;
+    border: none;
+  }
+
+  ul{
+    display: flex;
+    justify-content: center;
+
+    li.oj-listview-item-element{
+      width: 200px;
+      margin-right: 15px;
+      margin-top: 15px;
+      border: solid 1px #dcdcdc;
+      background-image: none;
+      border-radius: 3px;
+      padding: 10px 15px;
+      margin-left: 0;
+
+      img.book-cover{
+        width: 90%;
+      }
+
+      div.title{
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      div.author{
+        margin-bottom: 10px;
+      }
+
+      div.price{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .bookstore-pager{
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}

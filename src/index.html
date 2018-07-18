@@ -42,19 +42,10 @@
               Jerry's Bookstore
             </h1>
           </div>
-          <div class="oj-flex-bar-end header-toolbar">
-            <a href="#">Cart</a>
-            <a href="#">Logout</a>
+          <div class="oj-flex-bar-end header-toolbar" data-bind="visible:userLoggedIn">
+            <a href="#" data-bind="click:gotoCart">Cart</a>
+            <a href="#" data-bind="click:logout">Logout</a>
           </div>
-        </div>
-        <div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar" style="display: none;">
-          <oj-navigation-list data="[[navDataSource]]"
-                              :class="[[{'oj-md-condense oj-md-justify-content-flex-end': !smScreen()}]]"
-                              display="[[smScreen() ? 'icons' : 'all']]"
-                              edge="top"
-                              item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('navTemplate', true)]]"
-                              selection="{{router.stateId}}">
-          </oj-navigation-list>
         </div>
       </header>
 

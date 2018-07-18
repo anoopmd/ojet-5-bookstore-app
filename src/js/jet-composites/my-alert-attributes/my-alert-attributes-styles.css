@@ -1,8 +1,0 @@
-my-alert-attributes:not(.oj-complete){
-  visibility: hidden;
-}
-
-my-alert-attributes{
-	min-height: 50px;
-	width: 50px;
-}

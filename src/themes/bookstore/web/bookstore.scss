@@ -12,118 +12,14 @@
 // import alta aggregating file
 @import "../../../../node_modules/@oracle/oraclejet/dist/scss/alta/oj-alta";
 
-@import 'helpers/flex';
 $color-bs-primary: #0984e3;
 $bs-color-text: rgb(33, 43, 53);
 
-body{
-  background-color: rgba(211, 217, 217, 0.15);
-}
+@import 'helpers/flex';
+@import 'helpers/font';
+@import 'helpers/common';
 
-header.oj-web-applayout-header{
-  background-color: inherit;
-  box-shadow: none;
+@import 'pages/index';
+@import 'pages/login';
+@import 'pages/book';
 
-  .oj-web-applayout-header-title{
-    color: $bs-color-text;
-    font-weight: 500;
-    font-size: 20px;
-    padding: 20px;
-    line-height: inherit;
-  }
-
-  .header-toolbar{
-    a{
-      color: $bs-color-text;
-      font-weight: 500;
-      padding: 5px 10px;
-    }
-  }
-
-  .oj-navigationlist-item-label, .oj-navigationlist-app-level.oj-navigationlist-horizontal .oj-navigationlist-item:not(.oj-disabled) a.oj-navigationlist-item-content > .oj-navigationlist-item-label{
-    color: white;
-  }
-
-  .oj-navigationlist-item-icon, .oj-navigationlist-app-level.oj-navigationlist-horizontal .oj-navigationlist-item:not(.oj-disabled):not(.oj-hover):not(.oj-selected) .oj-navigationlist-item-icon{
-    color: white;
-  }
-
-  .oj-navigationlist-app-level.oj-navigationlist-horizontal:not(.oj-navigationlist-icon-only) .oj-navigationlist-item.oj-selected:not(.oj-hover) .oj-navigationlist-item-icon{
-    color: white;
-  }
-
-  li.oj-navigationlist-item-element.oj-navigationlist-item.oj-selected{
-    border-bottom-color: white;
-  }
-
-  .oj-button-jqui.oj-default.oj-button-half-chrome, .oj-button-jqui.oj-focus-only.oj-button-half-chrome, .oj-button.oj-default.oj-button-half-chrome .oj-button-button, .oj-button.oj-focus-only.oj-button-half-chrome .oj-button-button{
-    color: white;
-  }
-
-  .oj-button.oj-default.oj-button-half-chrome .oj-button-icon, .oj-button.oj-focus-only.oj-button-half-chrome .oj-button-icon{
-    color: white;
-  }
-}
-
-div.bookstore-book-list{
-  margin-top: 15px;
-
-  oj-list-view{
-    height: auto !important;
-    border: none;
-  }
-
-  ul{
-    display: flex;
-    justify-content: center;
-
-    li.oj-listview-item-element{
-      width: 200px;
-      margin-right: 15px;
-      margin-top: 15px;
-      border: solid 1px #dcdcdc;
-      background-image: none;
-      border-radius: 3px;
-      padding: 10px 15px;
-      margin-left: 0;
-
-      img.book-cover{
-        width: 90%;
-      }
-
-      div.title{
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 5px;
-      }
-
-      div.author{
-        margin-bottom: 10px;
-      }
-
-      div.price{
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 20px;
-        font-weight: bold;
-      }
-    }
-  }
-
-  .bookstore-pager{
-    margin-top: 15px;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-footer.oj-web-applayout-footer{
-  padding-top: 30px;
-  padding-bottom: 30px;
-  border-top: none;
-  background-color: inherit;
-  div.oj-web-applayout-footer-item{
-    justify-content: center;
-  }
-}

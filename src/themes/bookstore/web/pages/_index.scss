@@ -1,0 +1,34 @@
+body{
+  background-color: rgba(211, 217, 217, 0.15);
+}
+
+header.oj-web-applayout-header{
+  background-color: inherit;
+  box-shadow: none;
+
+  .oj-web-applayout-header-title{
+    color: $bs-color-text;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 20px;
+    line-height: inherit;
+  }
+
+  .header-toolbar{
+    a{
+      color: $bs-color-text;
+      font-weight: 500;
+      padding: 5px 10px;
+    }
+  }
+}
+
+footer.oj-web-applayout-footer{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-top: none;
+  background-color: inherit;
+  div.oj-web-applayout-footer-item{
+    justify-content: center;
+  }
+}
