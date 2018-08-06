@@ -13,14 +13,10 @@
             <oj-input-password id="password" class="input-field" required value={{password}}></oj-input-password>
           </div>
         </div>
-        <div class="text-center font-12" data-bind="visible:error">Invalid credentials</div>
+        <div class="text-center font-12" data-bind="visible:error">An error occured while registering the user</div>
 
         <div class="oj-flex display-flex justify-content-center margin-top-10">  
-            <oj-button data-bind="click:login">Login</oj-button>
-        </div>
-
-        <div class="oj-flex display-flex justify-content-center margin-top-10">  
-            <a href="#" data-bind="click:gotoRegsiter">Register</a>
+            <oj-button data-bind="click:register">Register</oj-button>
         </div>
 
     </div>

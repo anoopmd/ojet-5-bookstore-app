@@ -30,6 +30,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojmodule-element-utils', 'helpers/user', 
        self.router = oj.Router.rootInstance;
        self.router.configure({
          'login': {label: 'Login'},
+         'register': {label: 'Register'},
          'book': {label: 'Book', isDefault: true},
          'cart': {label: 'Cart', canEnter : function() {return true;}}
        });

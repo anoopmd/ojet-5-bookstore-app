@@ -3,8 +3,8 @@ body{
 }
 
 header.oj-web-applayout-header{
-  background-color: inherit;
-  box-shadow: none;
+  background-color: inherit !important;
+  box-shadow: none !important;
 
   .oj-web-applayout-header-title{
     color: $bs-color-text;
