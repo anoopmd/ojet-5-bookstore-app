@@ -7,7 +7,7 @@ define(['ojs/ojcore'], function(oj){
       let val = window.localStorage.getItem(key);
 
       if(!val || val === "undefined" || val === "null")
-        return val;
+        return undefined;
       else
         return JSON.parse(val);
     }

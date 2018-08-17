@@ -18,8 +18,14 @@ ojet build
 ojet serve
 ojet serve --theme=build
 
-# Run WebService
-node server.js
+## Launch Karma
+```sh
+$ node_modules/karma/bin/karma start
+```
+
+## Run Jasmine in browser
+```sh
+open jasmine-spec-runner.html in your browser
 ```
 
 ### Set Proxy

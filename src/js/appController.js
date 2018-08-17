@@ -14,7 +14,9 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojmodule-element-utils', 'helpers/user', 
       self.userLoggedIn = ko.observable(false);
 
       let token = UserHelper.getAccessToken();
+      console.log(token);
       if(token) {
+        console.log("I am here");
         self.userLoggedIn(true);
       }
 
