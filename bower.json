@@ -1,0 +1,6 @@
+{
+  "name": "karma-jasmine-example",
+  "dependencies": {
+    "jasmine-core": "jasmine#^2.6.4"
+  }
+}
